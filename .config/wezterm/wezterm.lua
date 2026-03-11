@@ -10,20 +10,26 @@ config.disable_default_key_bindings = true
 
 -- leaderキー ctrl+j
 config.leader = { key = "j", mods = "CTRL", timeout_milliseconds = 2000}
-
 config.automatically_reload_config = true
-config.font_size = 12.0
+config.font.wezterm = wezterm.font_with_fallback({
+ { family = "JetBrains Mono", weight = "Bold"},
+ { family = "Hiragino Sans", weight = 400}})
+config.font_size = 13.0
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.window_decorations = "RESIZE"
 config.show_tabs_in_tab_bar = true
 --config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {  
-inactive_titlebar_bg = "none",
+  inactive_titlebar_bg = "none",
   active_titlebar_bg = "none",
 }
 config.window_background_gradient = {
    colors = { "#000000" },
+}
+config.inactive_pane_hsb = {
+   saturation = 1.0,
+   brightness = 1.0,
 }
 -- タブバーの+を消す
 config.show_new_tab_button_in_tab_bar = false
