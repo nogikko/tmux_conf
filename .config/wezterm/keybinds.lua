@@ -169,7 +169,9 @@ return {
     { key = "7", mods = "SUPER", action = act.ActivateTab(6) },
     { key = "8", mods = "SUPER", action = act.ActivateTab(7) },
     { key = "9", mods = "SUPER", action = act.ActivateTab(-1) },
-  
+
+    -- Shift+Enter: kitty keyboard protocol sequence so Neovim sees <S-Enter>
+    { key = 'Enter', mods = 'SHIFT', action = act.SendString('\x1b[13;2u') },
 
   },
 
